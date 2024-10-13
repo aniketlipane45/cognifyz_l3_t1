@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery and Slideshow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <h1>Image Gallery and Slideshow</h1>
+    
+    <!-- Image Slideshow Section -->
+    <h2>Automatic Image Slideshow</h2>
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="ro.jpg" style="height:700px; width: 70%; object-fit:contain;">
+        </div>
+
+        <div class="slide fade">
+            <img src="raul.png" style="height:700px;width: 70%; object-fit:contain;">
+        </div>
+        <div class="slide fade">
+            <img src="surya.png" style="height:700px;width: 70%; object-fit:contain;">
+        </div>
+
+
+        <div class="slide fade">
+            <img src="ko.jpg" style="height:700px; width: 70%; object-fit:contain;">
+        </div>
+        <div class="slide fade">
+            <img src="bum.png" style="height:700px;width: 70%; object-fit:contain;">
+        </div>
+
+
+
+        <div class="slide fade">
+            <img src="pant1.png" style="height:700px; width: 70%; object-fit:contain;">
+        </div>
+        <div class="slide fade">
+            <img src="hp.png" style="height:700px;width: 70%; object-fit:contain;">
+        </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <h2>Image Gallery with Thumbnail Enlargement</h2>
+    <div class="gallery">
+        <div class="thumbnail">
+            <img src="ro.jpg" alt="Image 1"style="height:700px; width: 70%; object-fit:contain;" onclick="enlargeImage(this)">
+        </div>
+
+
+
+        <div class="thumbnail">
+            <img src="raul.png" alt="Image 3" style="height:700px; width: 70%; object-fit:contain;"onclick="enlargeImage(this)">
+        </div>
+
+        <div class="thumbnail">
+            <img src="surya.png" alt="Image 3" style="height:700px; width: 70%; object-fit:contain;"onclick="enlargeImage(this)">
+        </div>
+        <div class="thumbnail">
+            <img src="ko.jpg" alt="Image 2"style="height:700px; width: 70%; object-fit:contain;" onclick="enlargeImage(this)">
+        </div>
+        <div class="thumbnail">
+            <img src="bum.png" alt="Image 3"style="height:700px; width: 70%; object-fit:contain;" onclick="enlargeImage(this)">
+        </div>
+        <div class="thumbnail">
+            <img src="pant1.jpg" alt="Image 3" style="height:700px; width: 70%; object-fit:contain;"onclick="enlargeImage(this)">
+        </div>
+        <div class="thumbnail">
+            <img src="hp.png" alt="Image 1" style="height:700px; width: 70%; object-fit:contain;"  onclick="enlargeImage(this)">
+        </div>
+    </div>
+
+    
+    
+
+   
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-image" id="lightboxImage">
+    </div>
+
+    <script>
+       
+        
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); 
+        }
+    </script>
+
+</body>
+</html>
